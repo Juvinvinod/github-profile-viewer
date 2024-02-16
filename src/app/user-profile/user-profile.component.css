@@ -1,0 +1,19 @@
+.profile-card {
+    max-width: 750px;
+    margin-bottom: 8px;
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 10%;
+  }
+
+::ng-deep img{
+    border-radius: 50% !important;
+}
+
+::ng-deep mat-card-title-group{
+    padding-left: 15px !important;
+}
+
+::ng-deep mat-card-content{
+    padding-top: 15px !important;
+}

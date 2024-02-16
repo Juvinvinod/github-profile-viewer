@@ -8,7 +8,6 @@
     "trailingComma": "none",
     "bracketSameLine": true,
     "printWidth": 80,
-    "linebreak-style": [true, "LF"],
     "overrides": [
       {
         "files": "*.html",

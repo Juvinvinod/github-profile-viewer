@@ -41,7 +41,6 @@
         "plugin:@angular-eslint/template/accessibility"
       ],
       "rules": {
-        "prettier/prettier": ["error", { "parser": "angular" }]
       }
     }
   ]
