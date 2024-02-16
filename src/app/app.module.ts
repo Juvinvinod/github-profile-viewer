@@ -7,10 +7,16 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialModule } from './material/material.module';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, SearchBarComponent, UserProfileComponent],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
+  ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })

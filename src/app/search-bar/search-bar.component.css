@@ -1,4 +1,26 @@
-.search-form{
-    margin-top: 100px;
+.search-form{  
     text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+mat-form-field{
+    width: 750px;
+    @media only screen and (max-width: 950px) {
+        width: 350px;
+    }
+}
+
+.img-container{
+   padding-top: 10%;
+    display: flex;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+    margin: auto;
+}
+
+.search-image{
+    object-fit: fill;
+    width: 250px;
 }
