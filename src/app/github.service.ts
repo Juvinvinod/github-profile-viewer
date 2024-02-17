@@ -15,6 +15,7 @@ export class GithubService {
     return this.http.get<User>(this.apiURL + '/users/' + userName);
   }
 
+  //API call to get all repositories related to user
   getAllRepositories(userName: string, pageNumber: number) {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('page', pageNumber);
