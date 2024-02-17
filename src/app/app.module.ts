@@ -9,9 +9,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RepositoryListComponent } from './repository-list/repository-list.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, UserProfileComponent],
+  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
