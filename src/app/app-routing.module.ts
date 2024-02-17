@@ -6,12 +6,12 @@ import { RepositoryListComponent } from './repository-list/repository-list.compo
 
 const routes: Routes = [
   {
-    path: 'profile',
-    component: UserProfileComponent
-  },
-  {
     path: '',
     component: SearchBarComponent
+  },
+  {
+    path: 'profile',
+    component: UserProfileComponent
   },
   {
     path: 'repositories',

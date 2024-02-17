@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GithubService } from '../github.service';
 import { Subscription } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent implements OnInit, OnDestroy {
   userName = '';
   resultName = '';
   bio = '';
@@ -43,9 +43,14 @@ export class UserProfileComponent implements OnInit {
   getRepositories() {
     this._router.navigate(['./repositories'], {
       queryParams: {
-        name: this.userName
+        name: this.userName,
+        repoCount: this.repositories
       },
       queryParamsHandling: 'merge'
     });
+  }
+
+  ngOnDestroy(): void {
+    this.apiSubscription.unsubscribe();
   }
 }
