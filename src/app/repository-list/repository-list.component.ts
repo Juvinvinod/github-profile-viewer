@@ -5,6 +5,7 @@ import { GithubService } from '../github.service';
 import { Repo } from '../interfaces/repo';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-repository-list',
@@ -25,7 +26,8 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private service: GithubService,
-    private _router: Router
+    private _router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,11 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
           if (res.body) {
             this.dataSource = new MatTableDataSource<Repo>(res.body);
           }
+        },
+        error: () => {
+          this.snackBar.open('Error fetching Data', 'Dismiss', {
+            duration: 5000
+          });
         }
       });
   }
@@ -59,6 +66,11 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
           if (res.body) {
             this.dataSource = new MatTableDataSource<Repo>(res.body);
           }
+        },
+        error: () => {
+          this.snackBar.open('Error fetching Data', 'Dismiss', {
+            duration: 5000
+          });
         }
       });
   }
