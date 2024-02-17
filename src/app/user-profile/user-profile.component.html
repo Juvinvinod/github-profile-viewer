@@ -9,7 +9,9 @@
                 <mat-card-subtitle>Repositories: {{repositories}}</mat-card-subtitle>
                 <mat-card-subtitle class="followers-icons"><mat-icon>group</mat-icon>{{followers}}
                     followers · {{following}} following </mat-card-subtitle>
+                @if(location){
                 <mat-card-subtitle class="followers-icons"><mat-icon>room</mat-icon>{{location}}</mat-card-subtitle>
+                }
                 <img mat-card-xl-image src={{avatar}} alt="Image of user">
             </mat-card-title-group>
         </mat-card-header>

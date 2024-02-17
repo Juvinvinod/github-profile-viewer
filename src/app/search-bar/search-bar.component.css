@@ -1,3 +1,8 @@
+.container{
+    margin: auto;
+    padding: 100px 30px 0px;
+}
+
 .search-form{  
     text-align: center;
     align-content: center;
@@ -7,12 +12,14 @@
 mat-form-field{
     width: 750px;
     @media only screen and (max-width: 950px) {
-        width: 350px;
+        width: 300px;
+    }
+    @media only screen and (width: 280px) {
+        width: 200px;
     }
 }
 
 .img-container{
-   padding-top: 10%;
     display: flex;
     max-width: 250px;
     max-height: 250px;

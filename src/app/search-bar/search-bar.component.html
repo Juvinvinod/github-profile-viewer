@@ -1,13 +1,15 @@
-<div class="img-container">
-    <img src="../assets/search.gif" class="search-image" alt="searching">
+<div class="container">
+    <div class="img-container">
+        <img src="../assets/search.gif" class="search-image" alt="searching">
+    </div>
+    <form class="search-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter username</mat-label>
+            <input matInput value="" class="search-input" formControlName="name">
+            <mat-error *ngIf="userForm.get('name')?.hasError('required')">
+                Username is <strong>required</strong>
+            </mat-error>
+            <mat-icon matSuffix (click)="onSubmit()">search</mat-icon>
+        </mat-form-field>
+    </form>
 </div>
-<form class="search-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="outline">
-        <mat-label>Enter username</mat-label>
-        <input matInput value="" class="search-input" formControlName="name">
-        <mat-error *ngIf="userForm.get('name')?.hasError('required')">
-            Username is <strong>required</strong>
-        </mat-error>
-        <mat-icon matSuffix (click)="onSubmit()">search</mat-icon>
-    </mat-form-field>
-</form>
