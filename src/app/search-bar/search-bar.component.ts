@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
-  constructor() {}
+  constructor(private _router: Router) {}
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required])
   }); //using reactive forms to get username
@@ -16,6 +17,12 @@ export class SearchBarComponent {
   onSubmit() {
     if (this.userForm.valid) {
       const searchName = this.userForm.controls.name.value; // store the form value in a variable
+      this._router.navigate(['./profile'], {
+        queryParams: {
+          name: searchName
+        },
+        queryParamsHandling: 'merge'
+      });
     }
   }
 }

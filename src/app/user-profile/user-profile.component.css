@@ -1,45 +1,61 @@
-.profile-card {
-    max-width: 750px;
-    margin-bottom: 8px;
-    margin-left: 20%;
-    margin-right: 10%;
-    margin-top: 10%;
+/* .profile-card {
+   width: 750px;
+    height: 500px; 
+    margin-top: 5%;
   }
+
+  .container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  } */
+
+.user-card{
+    max-width:750px;
+    margin: auto;
+}
+
+.container{
+    padding-top: 200px;
+}
+
+.followers-icons{
+    align-content: center !important;
+    align-items: center !important;
+    display: flex;
+    gap: 5px;
+    padding-top: 10px !important;
+}
 
 ::ng-deep img{
     border-radius: 50% !important;
+    width: 150px !important;
+    height: 150px !important;
 }
 
-::ng-deep mat-card-title-group{
-    padding-left: 15px !important;
+/* ::ng-deep mat-card-title-group{
+    margin: auto !important;
 }
 
 ::ng-deep mat-card-content{
     padding-top: 15px !important;
-}
+} */
 
 .user-list{
     align-content: center;
     padding: 0 12% ;
 }
 
-.text{
-    margin-left: 15%;
-    font-size: large;
-    font-weight: bolder;
-    padding: 25px;
-}
-
-.example-card {
+/* .example-card {
     max-width: 1050px;
     margin-bottom: 8px;
     margin-left: 15%;
     margin-right: 15%;
-  }
+  } */
 
-  .repo-card-title{
+  /* .repo-card-title{
     padding-top: 5px !important;
-}
+} */
 
 ::ng-deep mat-paginator {
     margin-right: 15%;

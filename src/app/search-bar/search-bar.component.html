@@ -8,6 +8,6 @@
         <mat-error *ngIf="userForm.get('name')?.hasError('required')">
             Username is <strong>required</strong>
         </mat-error>
+        <mat-icon matSuffix (click)="onSubmit()">search</mat-icon>
     </mat-form-field>
-    <button mat-raised-button color="primary">Search</button>
 </form>

@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, SearchBarComponent, UserProfileComponent],
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]

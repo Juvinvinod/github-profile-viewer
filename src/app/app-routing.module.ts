@@ -5,12 +5,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: SearchBarComponent
-  },
-  {
     path: 'profile',
     component: UserProfileComponent
+  },
+  {
+    path: '',
+    component: SearchBarComponent
   }
 ];
 
