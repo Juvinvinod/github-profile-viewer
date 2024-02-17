@@ -10,9 +10,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RepositoryListComponent } from './repository-list/repository-list.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent],
+  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

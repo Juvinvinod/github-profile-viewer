@@ -1,3 +1,6 @@
+@if(loading){
+<app-loader></app-loader>
+}@else {
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 
@@ -33,3 +36,4 @@
         (page)="handlePageEvent($event)">
     </mat-paginator>
 </div>
+}

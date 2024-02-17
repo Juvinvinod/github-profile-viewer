@@ -12,6 +12,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrl: './repository-list.component.css'
 })
 export class RepositoryListComponent implements OnInit, AfterViewInit {
+  loading = true;
   displayedColumns: string[] = ['Repository', 'Description', 'Topics'];
   apiSubscription!: Subscription;
   dataSource!: MatTableDataSource<Repo>;
@@ -35,6 +36,7 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
       .getAllRepositories(this.userName, this.pageNumber)
       .subscribe({
         next: (res) => {
+          this.loading = false;
           if (res.body) {
             this.dataSource = new MatTableDataSource<Repo>(res.body);
           }
