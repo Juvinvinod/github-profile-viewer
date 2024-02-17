@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './user-profile.component.css'
 })
 export class UserProfileComponent implements OnInit, OnDestroy {
-  loading = true;
+  loading = true; //handles loader
   userName = '';
   resultName = '';
   bio = '';
@@ -27,10 +27,12 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar
   ) {}
   ngOnInit(): void {
+    //get the query params from URL
     this.route.queryParams.subscribe((params) => {
       this.userName = params['name'];
     });
 
+    //make API call to get user details
     this.apiSubscription = this.service.getUser(this.userName).subscribe({
       next: (res) => {
         this.loading = false;
@@ -58,6 +60,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     });
   }
 
+  //function to get all the repositories belonging to the user
   getRepositories() {
     this._router.navigate(['./repositories'], {
       queryParams: {
@@ -68,6 +71,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     });
   }
 
+  //unsubscribe when switching component
   ngOnDestroy(): void {
     this.apiSubscription.unsubscribe();
   }

@@ -15,7 +15,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent, NavbarComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    SearchBarComponent,
+    UserProfileComponent,
+    RepositoryListComponent,
+    LoaderComponent,
+    NavbarComponent,
+    NotFoundComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
