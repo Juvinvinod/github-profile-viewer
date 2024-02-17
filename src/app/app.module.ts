@@ -12,9 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RepositoryListComponent } from './repository-list/repository-list.component';
 import { LoaderComponent } from './loader/loader.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent, NavbarComponent],
+  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent, NavbarComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
