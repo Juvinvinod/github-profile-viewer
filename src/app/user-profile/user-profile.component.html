@@ -14,11 +14,15 @@
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
-            {{bio}}
+            <p>{{bio}}</p>
             <mat-divider></mat-divider>
         </mat-card-content>
         <mat-card-actions>
+            @if(repositories){
             <button mat-button color="primary" (click)="getRepositories()">View Repositories</button>
+            }@else {
+            <button mat-raised-button [disabled]="true">No Repositories</button>
+            }
         </mat-card-actions>
     </mat-card>
 </div>

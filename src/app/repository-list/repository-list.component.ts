@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GithubService } from '../github.service';
 import { Repo } from '../interfaces/repo';
@@ -24,7 +24,8 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: GithubService
+    private service: GithubService,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -71,5 +72,14 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
           }
         }
       });
+  }
+
+  goBack() {
+    this._router.navigate(['./profile'], {
+      queryParams: {
+        name: this.userName
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 }

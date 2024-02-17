@@ -30,6 +30,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     this.route.queryParams.subscribe((params) => {
       this.userName = params['name'];
     });
+
     this.apiSubscription = this.service.getUser(this.userName).subscribe({
       next: (res) => {
         this.loading = false;
