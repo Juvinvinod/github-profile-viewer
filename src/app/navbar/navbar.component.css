@@ -1,0 +1,9 @@
+.navbar-icons{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.navbar-icons:hover{
+    cursor: pointer;
+}

@@ -11,9 +11,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RepositoryListComponent } from './repository-list/repository-list.component';
 import { LoaderComponent } from './loader/loader.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent],
+  declarations: [AppComponent, SearchBarComponent, UserProfileComponent, RepositoryListComponent, LoaderComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
