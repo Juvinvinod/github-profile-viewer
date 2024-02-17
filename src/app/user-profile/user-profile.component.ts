@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GithubService } from '../github.service';
 import { Subscription } from 'rxjs';
 
@@ -20,7 +20,8 @@ export class UserProfileComponent implements OnInit {
   apiSubscription!: Subscription;
   constructor(
     private route: ActivatedRoute,
-    private service: GithubService
+    private service: GithubService,
+    private _router: Router
   ) {}
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -36,6 +37,15 @@ export class UserProfileComponent implements OnInit {
         this.following = res.following;
         this.location = res.location;
       }
+    });
+  }
+
+  getRepositories() {
+    this._router.navigate(['./repositories'], {
+      queryParams: {
+        name: this.userName
+      },
+      queryParamsHandling: 'merge'
     });
   }
 }
