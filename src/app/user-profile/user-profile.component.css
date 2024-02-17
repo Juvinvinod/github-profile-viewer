@@ -16,8 +16,12 @@
     padding-top: 10px !important;
 }
 
-::ng-deep img{
+img{
     border-radius: 50% !important;
     width: 150px !important;
     height: 150px !important;
+    @media only screen and (width: 280px) {
+        width: 100px !important;
+        height: 100px !important;
+    }
 }

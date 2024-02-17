@@ -41,11 +41,6 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
           if (res.body) {
             this.dataSource = new MatTableDataSource<Repo>(res.body);
           }
-          // const array = res.headers.get('Link')?.split(' ');
-          // if (array && array[array.length - 1] === 'rel="last"') {
-          //   const link = array[array.length - 2];
-          //   this.totalPages = this.getPageNumber(link) * this.reposPerPage;
-          // }
         }
       });
   }
@@ -53,12 +48,6 @@ export class RepositoryListComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
-  // getPageNumber(linkHeader: string): number {
-  //   const regex = /page=(\d+)/;
-  //   const match = regex.exec(linkHeader);
-  //   return match ? parseInt(match[1], 10) : -1;
-  // }
 
   handlePageEvent(pageEvent: PageEvent) {
     console.log(pageEvent);
